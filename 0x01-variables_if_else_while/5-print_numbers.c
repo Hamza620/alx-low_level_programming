@@ -9,11 +9,11 @@ int main(void)
 {
 	int n = 0;
 
-	while (a < 10)
+	while (n < 10)
 	{
-		print("%d", n);
+		printf("%d", n);
 		n++;
 	}
-	putchr('\n');
+	putchar('\n');
 	return (0);
 }

@@ -17,7 +17,7 @@ int main(void)
 		}
 		t = a + b;
 		a = b;
-		b = t
+		b = t;
 	}
 	printf("%d\n", s);
 	return (0);

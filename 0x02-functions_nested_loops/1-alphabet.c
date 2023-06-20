@@ -3,9 +3,9 @@
 /**
  * print_alphabet - prints the alphabet in lowercase
  *
- * 
+ *
  */
-void print_alphabet(void) 
+void print_alphabet(void)
 {
 	char l;
 
@@ -14,5 +14,4 @@ void print_alphabet(void)
 		_putchar(l);
 	}
 	_putchar('\n');
-	return;
 }

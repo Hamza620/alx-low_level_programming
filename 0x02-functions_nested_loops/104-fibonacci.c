@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 
 /**
  * main -Entry function
@@ -7,7 +8,7 @@
  */
 int main(void)
 {
-	unsigned long long int a = 1, b = 2, s;
+	int64_t a = 1, b = 2, s;
 	int i;
 
 	printf("%llu, %llu", a, b);

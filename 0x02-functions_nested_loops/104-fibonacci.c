@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	unsigned long int a = 1, b = 2, s;
+	unsigned long long int a = 1, b = 2, s;
 	int i;
 
-	printf("%lu, %lu", a, b);
+	printf("%llu, %llu", a, b);
 	for (i = 3; i <= 98; i++)
 	{
 		s = a + b;
-		printf(", %lu", s);
+		printf(", %llu", s);
 		a = b;
 		b = s;
 	}

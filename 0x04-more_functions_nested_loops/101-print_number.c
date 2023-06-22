@@ -33,11 +33,12 @@ void print_number(int n)
 	else if (n == 0)
 		_putchar('0');
 	tn = n;
-	while (tn != 0)
+	while (tn >= 10)
 	{
 		tn = tn / 10;
 		c++;
 	}
+	c++;
 	for (k = c; k >= 1; k--)
 	{
 		digit = (n / powr(10, k - 1)) % 10;

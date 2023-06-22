@@ -6,7 +6,6 @@
  * @b: The exponent
  * Return: a^b result
  */
-/*
 int powr(int a, int b)
 {
 	int i, p = 1;
@@ -16,19 +15,6 @@ int powr(int a, int b)
 		p = p * a;
 	}
 	return (p);
-}
-*/
-int powr(int a, int b)
-{
-    int p = 1;
-    while (b > 0)
-    {
-        if (b % 2 == 1)
-            p *= a;
-        a *= a;
-        b /= 2;
-    }
-    return p;
 }
 
 /**

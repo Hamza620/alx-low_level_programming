@@ -41,6 +41,10 @@ void print_number(int n)
 	for (k = c; k >= 1; k--)
 	{
 		digit = (n / powr(10, k - 1)) % 10;
+		if (k == c && digit == 1)
+		{
+			_putchar('0');
+		}
 		_putchar(digit + '0');
 	}
 }

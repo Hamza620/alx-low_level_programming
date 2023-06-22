@@ -42,9 +42,6 @@ void print_number(int n)
 	{
 		digit = (n / powr(10, k - 1)) % 10;
 		if (k == c && digit == 1)
-		{
-			_putchar('0');
-		}
 		_putchar(digit + '0');
 	}
 }

@@ -1,47 +1,26 @@
 #include "main.h"
 
 /**
- * powr - calculer the power of two numbers
- * @a: The base
- * @b: The exponent
- * Return: a^b result
- */
-unsigned int powr(unsigned int a, unsigned int b)
-{
-	unsigned int i, p = 1;
-
-	for (i = 0; i < b; i++)
-	{
-		p = p * a;
-	}
-	return (p);
-}
-
-/**
  * print_number - function that prints an integer
  * @n: integer to print
  *
  */
-void print_number(unsigned int n)
+void print_number(int n)
 {
-	unsigned int k, tn, digit, c = 0;
+	unsigned int a;
 
 	if (n < 0)
 	{
+		a = -n;
 		_putchar('-');
-		n = -n;
 	}
-	else if (n == 0)
-		_putchar('0');
-	tn = n;
-	while (tn != 0)
+	else
 	{
-		tn = tn / 10;
-		c++;
+		a = n;
 	}
-	for (k = c; k >= 1; k--)
+	if (a / 10)
 	{
-		digit = (n / powr(10, k - 1)) % 10;
-		_putchar(digit + '0');
+		print_number(n1 / 10);
 	}
+	_putchar((a % 10) + '0');
 }

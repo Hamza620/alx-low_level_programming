@@ -8,7 +8,7 @@
  */
 int powr(int a, int b)
 {
-	int i, p = 1;
+	unsigned int i, p = 1;
 
 	for (i = 0; i < b; i++)
 	{

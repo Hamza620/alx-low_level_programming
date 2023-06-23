@@ -6,9 +6,9 @@
  * @b: The exponent
  * Return: a^b result
  */
-int powr(int a, int b)
+unsigned int powr(unsigned int a, unsigned int b)
 {
-	int i, p = 1;
+	unsigned int i, p = 1;
 
 	for (i = 0; i < b; i++)
 	{
@@ -22,9 +22,9 @@ int powr(int a, int b)
  * @n: integer to print
  *
  */
-void print_number(int n)
+void print_number(unsigned int n)
 {
-	int k, tn, digit, c = 0;
+	unsigned int k, tn, digit, c = 0;
 
 	if (n < 0)
 	{

@@ -22,9 +22,9 @@ int powr(int a, int b)
  * @n: integer to print
  *
  */
-void print_number(int n)
+void print_number(unsigned int n)
 {
-	int k, tn, digit, c = 0;
+	unsigned int k, tn, digit, c = 0;
 
 	if (n < 0)
 	{

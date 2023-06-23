@@ -24,7 +24,7 @@ int powr(int a, int b)
  */
 void print_number(int n)
 {
-	int k, tn, digit, c = 0;
+	unsigned int k, tn, digit, c = 0;
 
 	if (n < 0)
 	{

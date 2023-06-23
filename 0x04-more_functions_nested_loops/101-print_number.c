@@ -8,7 +8,7 @@
  */
 int powr(int a, int b)
 {
-	unsigned int i, p = 1;
+	int i, p = 1;
 
 	for (i = 0; i < b; i++)
 	{
@@ -24,7 +24,7 @@ int powr(int a, int b)
  */
 void print_number(int n)
 {
-	unsigned int k, tn, digit, c = 0;
+	int k, tn, digit, c = 0;
 
 	if (n < 0)
 	{

@@ -8,11 +8,12 @@
 void puts_half(char *str)
 {
 	int hl, lent = 0;
+	char *count = str;
 
-	while (*str != '\0')
+	while (*count != '\0')
 	{
 		lent++;
-		str++;
+		count++;
 	}
 	if (lent % 2 == 0)
 	{

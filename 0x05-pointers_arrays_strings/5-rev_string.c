@@ -22,5 +22,6 @@ void rev_string(char *s)
 		*s = *tail;
 		*tail = b;
 		s++;
+		tail--;
 	}
 }

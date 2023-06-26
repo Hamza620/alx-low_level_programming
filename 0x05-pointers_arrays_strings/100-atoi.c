@@ -37,12 +37,12 @@ int _atoi(char *s)
 
 	while (s[i] >= '0' && s[i] <= '9')
 	{
-		if (r > INI_MAX /10 || (r == INI_MAX /10 && (s[i] - '0') > INT_MAX % 10 ))
+		if (r > 2147483647 /10 || (r == 2147483647 /10 && (s[i] - '0') > 2147483647 % 10 ))
 		{
 			if (g == 1)
-				return INT_MAX;
+				return (2147483647);
 			else
-				return INT_MIN;
+				return (-2147483647);
 		}
 		r = (r * 10) + (s[i] - '0');
 		i++;

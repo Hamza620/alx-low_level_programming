@@ -10,7 +10,7 @@ int _atoi(char *s)
 	int g = 1;
 	unsigned int r = 0;
 
-	do{
+	do {
 		if (*s == '-')
 			g = g * -1;
 		else if (*s >= '0' && *s <= '9')

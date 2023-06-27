@@ -10,7 +10,7 @@ int _atoi(char *s)
 	int g = 1;
 	unsigned int r = 0;
 
-	while (*s++)
+	do
 	{
 		if (*s == '-')
 			g = g * -1;
@@ -18,6 +18,6 @@ int _atoi(char *s)
 			r = (r * 10) + (*s - '0');
 		else if (r > 0)
 			break;
-	}
+	} while (*s++);
 	return (r * g);
 }

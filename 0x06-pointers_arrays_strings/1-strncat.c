@@ -5,6 +5,7 @@
  * @dest: input char
  * @src: input char
  * @n: number of bytes
+ * Return: char output
  */
 char *_strncat(char *dest, char *src, int n)
 {

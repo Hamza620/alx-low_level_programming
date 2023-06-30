@@ -57,7 +57,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			v2 = *(n2 + j) - '0';
 		t = v1 + v2 + ov;
-		if (t >= 10)
+		if (t >= 10 || (t < v1 && t< v2))
 			ov = 1;
 		else
 			ov = 0;

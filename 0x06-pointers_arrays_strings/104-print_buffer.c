@@ -3,49 +3,48 @@
 
 /**
  * print_buffer - function that prints a buffer
- * @b: buffer's pointer
+ * @b: buffer
  * @size: buffer's size
  *
  */
 void print_buffer(char *b, int size)
 {
-	int i, j;
+	int index, j, i;
 
+	index = 0;
 	if (size <= 0)
 	{
 		printf("\n");
 		return;
 	}
-	for (i = 0; i < size; i += 10)
+	while (index < size)
 	{
-		printf("%08x: ", i);
+		j = size - index < 10 ? size - index : 10;
 
-		for (j = i; j < i + 10; j++)
+		printf("%08x: ", index);
+
+		for (i = 0; i < 10; i++)
 		{
-			if (i + j < size)
-				printf("%02x", (unsigned char)b[i + j]);
+			if (i < j)
+				printf("%02x", *(b + index + i));
 			else
 				printf("  ");
 
-			if (j % 2 == 1)
+			if (i % 2)
 				printf(" ");
 		}
 
-		for (j = i; j < i + 10; j++)
+		for (i = 0; i < j; i++)
 		{
-			if (j + i < size)
-			{
-				if (b[i + j] >= 32 && b[i + j] <= 126)
-					printf("%c", b[i + j]);
-				else
-					printf(".");
-			}
-			else
-			{
-				printf(" ");
-			}
+			int c = *(b + index + i);
+
+			if (c < 32 || c > 126)
+				c = '.';
+
+			printf("%c", c);
 		}
 
 		printf("\n");
+		index += 10;
 	}
 }

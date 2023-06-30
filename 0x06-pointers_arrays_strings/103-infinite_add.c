@@ -6,22 +6,17 @@
  */
 void rev_string(char *s)
 {
-	int len = 0;
-	char *tail = s;
+	int i = 0, j = 0;
+	char c;
 
-	while (*tail != '\0')
+	while (*(s + i) != '\0')
+		i++;
+	i--;
+	for (j = 0; j < i; j++; i++)
 	{
-		len++;
-		tail++;
-	}
-	tail--;
-	while (s < tail)
-	{
-		char b = *s;
-		*s = *tail;
-		*tail = b;
-		s++;
-		tail--;
+		c = *(s + j);
+		*(s + j) = *(s + i);
+		*(s + i) = t;
 	}
 }
 /**
@@ -40,7 +35,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	while (*(n1 + i) != '\0')
 		i++;
 	while (*(n2 + j) != '\0')
-		j--;
+		j++;
 	i--;
 	j--;
 
@@ -57,7 +52,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			v2 = *(n2 + j) - '0';
 		t = v1 + v2 + ov;
-		if (t >= 10 || (t < v1 && t < v2))
+		if (t >= 10)
 			ov = 1;
 		else
 			ov = 0;

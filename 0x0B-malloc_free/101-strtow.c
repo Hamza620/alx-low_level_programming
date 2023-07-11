@@ -38,6 +38,13 @@ char **strtow(char *str)
 		return (NULL);
 	i = 0;
 	k = 0;
+	while (str[i] == ' ')
+		i++;
+	if (str[i] == '\0')
+	{
+		free(s);
+		return (NULL);
+	}
 	while (str[i] != '\0')
 	{
 		while (str[i] == ' ')

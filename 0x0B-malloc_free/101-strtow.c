@@ -31,7 +31,7 @@ char **strtow(char *str)
 	char **s;
 
 	if (str == NULL || *str == '\0')
-		return NULL;
+		return (NULL);
 	c = wordcounter(str);
 	s = (char **)malloc((c + 1) * sizeof(char *));
 	if (s == NULL)
@@ -57,6 +57,8 @@ char **strtow(char *str)
 			s[k][j] = str[i++];
 		s[k][j] = '\0';
 		k++;
+		while (str[i] == ' ')
+			i++;
 	}
 	s[k] = NULL;
 	return (s);

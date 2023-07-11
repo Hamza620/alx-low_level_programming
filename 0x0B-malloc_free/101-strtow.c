@@ -53,7 +53,7 @@ char **strtow(char *str)
 			free(s);
 			return (NULL);
 		}
-		for (j = 0; j < len; j++)
+		for (j = 0; j < lent; j++)
 			s[k][j] = str[i++];
 		s[k][j] = '\0';
 		k++;

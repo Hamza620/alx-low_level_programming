@@ -14,7 +14,7 @@ int **alloc_grid(int width, int height)
 	int **coord;
 	int i, j;
 
-	coord = malloc(sizeof(*tab) * height);
+	coord = malloc(sizeof(*coord) * height);
 	if (height <= 0 || width <= 0 || coord <= 0)
 		return (NULL);
 	for (i = 0; i < height; i++)

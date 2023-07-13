@@ -33,10 +33,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		if (i < z1)
 			s[i] = s1[i];
-		else if (n < z2)
-			s[i] = s2[n++];
+		else if (i - z1 < n)
+			s[i] = s2[i - z1];
 		else
-			s[i] = s2[j++];
+			break;
 	}
 	s[i] = '\0';
 	return (s);

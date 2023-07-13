@@ -38,6 +38,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			s[i] = '\0';
 	}
-	/*s[i] = '\0';*/
+	s[i + z1] = '\0';
 	return (s);
 }

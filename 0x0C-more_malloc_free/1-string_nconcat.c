@@ -31,10 +31,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	z = z - n;
 	for (i = 0; i < z1; i++)
 		s[i] = s1[i];
-	for (; n < z2 && i < z; i++, j++)
+	for (i = z1 ; n < z2 && i < z; i++, j++)
 		s[i] = s2[j];
-	for (; n >= z2 && i < (z1 + z2); i++, j++)
-		s[i] = s[j];
+	for (i = z1; n >= z2 && i < (z1 + z2); i++, j++)
+		s[i] = s2[j];
 	s[i] = '\0';
 	return (s);
 }

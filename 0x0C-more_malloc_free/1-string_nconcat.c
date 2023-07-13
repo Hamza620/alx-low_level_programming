@@ -6,6 +6,7 @@
  * string_nconcat - function that concatenates two strings
  * @s1: First string
  * @s2: Second string
+ * n: number of bytes from s2
  * Return: New pointer in success, and NULL in failure
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -32,9 +33,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		if (i < z1)
 			s[i] = s1[i];
-		else
+		else if (i < z1 + n)
 			s[i] = s2[i - z1];
 	}
-	s[z1 + i] = '\0';
+	s[i] = '\0';
 	return (s);
 }

@@ -1,74 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 
 /**
- * _atoi - function that convert a string to an integer
- * @s: string to convert
- * Return: converted int
+ * isDigit - function that checks for a digit (0 through 9)
+ * @c: number to check
+ * Return: 1 if digit otherwise 0
  */
-unsigned long int _atoi(char *s)
+int isDigit(char *s)
 {
-	int g = 1;
-	unsigned long int r = 0;
+	int i = 0;
 
-	if (*s == '-')
+	while (s[i])
 	{
-		g = -1;
-		s++;
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
 	}
-	while (*s)
-	{
-		if (!isdigit(*s))
-			break;
-
-		r = r * 10 + (*s - '0');
-		s++;
-	}
-	return (r * g);
+	return (1);
 }
 
 /**
- * multiply - Multiplies two numbers
- * @n1: First number
- * @n2: Second number
- * Return: result of multiplication
+ * stringLength - function that returns the length of a string
+ * @s: the string
+ * Return: lenth of the string
  */
-unsigned long int multiply(unsigned long int n1, unsigned long int n2)
+int stringLength(char *s)
 {
-	unsigned long int res;
+	int i = 0;
 
-	res = n1 * n2;
-	return (res);
-}
-
-/**
- * is_valid_number - Checks if a string is a valid number
- * @s: String to check
- * Return: 1 if valid, 0 otherwise
- */
-int is_valid_number(char *s)
-{
-	int v = 1;
-
-	if (s == NULL || *s == '\0')
+	while (s[i] != '\0')
 	{
-		v = 0;
+		i++;
 	}
-	else
-	{
-		while (*s != '\0')
-		{
-			if (!isdigit(*s))
-			{
-				v = 0;
-				break;
-			}
-			s++;
-		}
-	}
-	return (v);
+	return (i);
 }
 
 /**
@@ -79,24 +43,47 @@ int is_valid_number(char *s)
  */
 int main(int argc, char *argv[])
 {
-	unsigned long int n1, n2, res;
-	char *n1_str, *n2_str;
+	char *s1, *s2;
+	int z1, z2, len, i, carry, d1, d2, *res, a = 0;
 
-	if (argc != 3)
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !isDigit(s1) || !isDigit(s2))
 	{
 		printf("Error\n");
 		return (98);
 	}
-	n1_str = argv[1];
-	n2_str = argv[2];
-	if (!is_valid_number(n1_str) || !is_valid_number(n2_str))
+	z1 = stringLength(s1);
+	z2 = stringLength(s2);
+	len = z1 + z2 + 1;
+	res = malloc(sizeof(int) * len);
+	if (!res)
+		return (1);
+	for (i = 0; i <= z1 + z2; i++)
+		res[i] = 0;
+	for (z1 = z1 - 1; z1 >= 0; z1--)
 	{
-		printf("Error\n");
-		return (98);
+		d1 = s1[z1] - '0';
+		carry = 0;
+		for (z2 = stringLength(s2) - 1; z2 >= 0; z2--)
+		{
+			d2 = s2[z2] - '0';
+			carry += res[z1 + z2 + 1] + (d1 * d2);
+			res[z1 + z2 + 1] = carry % 10;
+			carry /= 10;
+		}
+		if (carry > 0)
+			res[z1 + z2 + 1] += carry;
 	}
-	n1 = _atoi(n1_str);
-	n2 = _atoi(n2_str);
-	res = multiply(n1, n2);
-	printf("%d\n", res);
+	for (i = 0; i < len - 1; i++)
+	{
+		if (res[i])
+			a = 1;
+		if (a)
+			putchar(res[i] + '0');
+	}
+	if (!a)
+		putchar('0');
+	putchar('\n');
+	free(res);
 	return (0);
 }

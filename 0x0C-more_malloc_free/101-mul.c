@@ -35,9 +35,9 @@ int _atoi(char *s)
  * @n2: Second number
  * Return: result of multiplication
  */
-int multiply(int n1, int n2)
+unsigned int multiply(int n1, int n2)
 {
-	int res;
+	unsigned int res;
 
 	res = n1 * n2;
 	return (res);

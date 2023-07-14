@@ -65,7 +65,7 @@ void printResult(int *res, int size)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int z1, z2, z, i, c, d1, d2, *res, a = 0;
+	int z1, z2, z, i, c, d1, d2, *res;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !isDigit(s1) || !isDigit(s2))

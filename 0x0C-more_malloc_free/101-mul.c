@@ -44,7 +44,6 @@ int stringLength(char *s)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int z1 = stringLength(s1), z2 = stringLength(s2), z = z1 + z2 + 1;
 	int i, carry, d1, d2, *res, a = 0;
 
 	s1 = argv[1], s2 = argv[2];
@@ -53,6 +52,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
+	int z1 = stringLength(s1), z2 = stringLength(s2), z = z1 + z2 + 1;
 	res = malloc(sizeof(int) * z);
 	if (!res)
 		return (1);

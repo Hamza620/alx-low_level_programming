@@ -54,7 +54,8 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 	res = malloc(sizeof(int) * z);
-	(!res) ? (return 1) : 0;
+	if (!res)
+		return (1);
 	for (i = 0; i <= z1 + z2; i++)
 		res[i] = 0;
 	for (z1 = z1 - 1; z1 >= 0; z1--)

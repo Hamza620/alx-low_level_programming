@@ -3,7 +3,7 @@
 
 /**
  * isDigit - function that checks for a digit (0 through 9)
- * @c: number to check
+ * @s: number to check
  * Return: 1 if digit otherwise 0
  */
 int isDigit(char *s)
@@ -44,7 +44,7 @@ int stringLength(char *s)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int z1, z2, len, i, carry, d1, d2, *res, a = 0;
+	int z1, z2, z, i, carry, d1, d2, *res, a = 0;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !isDigit(s1) || !isDigit(s2))
@@ -54,8 +54,8 @@ int main(int argc, char *argv[])
 	}
 	z1 = stringLength(s1);
 	z2 = stringLength(s2);
-	len = z1 + z2 + 1;
-	res = malloc(sizeof(int) * len);
+	z = z1 + z2 + 1;
+	res = malloc(sizeof(int) * z);
 	if (!res)
 		return (1);
 	for (i = 0; i <= z1 + z2; i++)
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		if (carry > 0)
 			res[z1 + z2 + 1] += carry;
 	}
-	for (i = 0; i < len - 1; i++)
+	for (i = 0; i < z - 1; i++)
 	{
 		if (res[i])
 			a = 1;

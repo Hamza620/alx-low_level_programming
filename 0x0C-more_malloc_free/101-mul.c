@@ -8,10 +8,10 @@
  * @s: string to convert
  * Return: converted int
  */
-unsigned int _atoi(char *s)
+unsigned long int _atoi(char *s)
 {
 	int g = 1;
-	unsigned int r = 0;
+	unsigned long int r = 0;
 
 	if (*s == '-')
 	{
@@ -35,9 +35,9 @@ unsigned int _atoi(char *s)
  * @n2: Second number
  * Return: result of multiplication
  */
-unsigned int multiply(unsigned int n1, unsigned int n2)
+unsigned long int multiply(unsigned long int n1, unsigned long int n2)
 {
-	unsigned int res;
+	unsigned long int res;
 
 	res = n1 * n2;
 	return (res);
@@ -79,7 +79,7 @@ int is_valid_number(char *s)
  */
 int main(int argc, char *argv[])
 {
-	unsigned int n1, n2, res;
+	unsigned long int n1, n2, res;
 	char *n1_str, *n2_str;
 
 	if (argc != 3)

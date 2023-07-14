@@ -8,7 +8,7 @@
  * @s: string to convert
  * Return: converted int
  */
-int _atoi(char *s)
+unsigned int _atoi(char *s)
 {
 	int g = 1;
 	unsigned int r = 0;
@@ -35,7 +35,7 @@ int _atoi(char *s)
  * @n2: Second number
  * Return: result of multiplication
  */
-unsigned int multiply(int n1, int n2)
+unsigned int multiply(unsigned int n1, unsigned int n2)
 {
 	unsigned int res;
 
@@ -79,7 +79,7 @@ int is_valid_number(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int n1, n2, res;
+	unsigned int n1, n2, res;
 	char *n1_str, *n2_str;
 
 	if (argc != 3)

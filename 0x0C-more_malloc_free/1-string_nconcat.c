@@ -28,10 +28,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s = malloc((z + 1) * sizeof(char));
 	if (s == NULL)
 		return (NULL);
-	/*z = z - n;*/
-	for (i = 0; s1[i]; i++)
+	for (i = 0; i < z1; i++)
 		s[i] = s1[i];
-	for (j = 0; s[2] && j < n; i++, j++)
+	for (; n < z2 && i < z; i++, j++)
 		s[i] = s2[j];
 	for (; n >= z2 && i < (z1 + z2); i++, j++)
 		s[i] = s2[j];

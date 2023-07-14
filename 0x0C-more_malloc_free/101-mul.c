@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+
+#include "main.h"
+
+/**
+ * _atoi - function that convert a string to an integer
+ * @s: string to convert
+ * Return: converted int
+ */
+int _atoi(char *s)
+{
+	int g = 1;
+	unsigned int r = 0;
+
+	do {
+		if (*s == '-')
+			g = g * -1;
+		else if (*s >= '0' && *s <= '9')
+			r = (r * 10) + (*s - '0');
+		else if (r > 0)
+			break;
+	} while (*s++);
+	return (r * g);
+}
 
 /**
  * multiply - Multiplies two numbers
@@ -67,8 +89,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
-	n1 = atoi(n1_str);
-	n2 = atoi(n2_str);
+	n1 = _atoi(n1_str);
+	n2 = _atoi(n2_str);
 	res = multiply(n1, n2);
 	printf("%d\n", res);
 	return (0);

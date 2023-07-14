@@ -4,6 +4,25 @@
 #include "main.h"
 
 /**
+ * *_memset - set memory with constants
+ * @p: memory area to be filled
+ * @cst: constant
+ * @n: size of the grid
+ * Return: pointer
+ */
+char *_memset(char *p, char cst, unsigned int size)
+{
+	unsigned int i;
+
+	for (i = 0; i < size; i++)
+	{
+		p[i] = cst;
+	}
+
+	return (p);
+}
+
+/**
  * _calloc - function that allocates memory for an array
  * @nmemb: elements
  * @size: size of element
@@ -18,6 +37,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	p = malloc(nmemb * size);
 	if (p == 0)
 		return (NULL);
-	memset(p, 0, nmemb * size);
+	_memset(p, 0, nmemb * size);
 	return (p);
 }

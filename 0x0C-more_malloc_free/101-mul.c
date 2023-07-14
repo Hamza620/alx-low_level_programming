@@ -10,17 +10,21 @@
  */
 int _atoi(char *s)
 {
-	int g = 1;
-	unsigned int r = 0;
+	int g = 1, r = 0;
 
-	do {
-		if (*s == '-')
-			g = g * -1;
-		else if (*s >= '0' && *s <= '9')
-			r = (r * 10) + (*s - '0');
-		else if (r > 0)
+	if (*s == '-')
+	{
+		g = -1;
+		s++;
+	}
+	while (*s)
+	{
+		if (!isdigit(*s))
 			break;
-	} while (*s++);
+
+		r = r * 10 + (*s - '0');
+		s++;
+	}
 	return (r * g);
 }
 

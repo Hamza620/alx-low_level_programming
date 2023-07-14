@@ -44,7 +44,8 @@ int stringLength(char *s)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int z1, z2, z, i, carry, d1, d2, *res, a = 0;
+	int z1 = stringLength(s1), z2 = stringLength(s2), z = z1 + z2 + 1;
+	int i, carry, d1, d2, *res, a = 0;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !isDigit(s1) || !isDigit(s2))
@@ -52,12 +53,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
-	z1 = stringLength(s1);
-	z2 = stringLength(s2);
-	z = z1 + z2 + 1;
 	res = malloc(sizeof(int) * z);
-	if (!res)
-		return (1);
+	(!res) ? (return 1) : 0;
 	for (i = 0; i <= z1 + z2; i++)
 		res[i] = 0;
 	for (z1 = z1 - 1; z1 >= 0; z1--)

@@ -6,3 +6,4 @@ struct dog
 	int age;
 	char *owner
 };
+typedef struct dog my_dog;

@@ -4,7 +4,7 @@ struct dog
 {
 	char *name;
 	int age;
-	char *owner
+	char *owner;
 };
 typedef struct dog my_dog;
 #endif

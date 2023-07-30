@@ -3,7 +3,7 @@
 struct dog
 {
 	char *name;
-	int age;
+	float age;
 	char *owner;
 };
 typedef struct dog my_dog;

@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stddef.h>
 #include "3-calc.h"
 
 /**

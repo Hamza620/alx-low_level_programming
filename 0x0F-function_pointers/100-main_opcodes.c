@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
 		return (2);
 	}
 	unsigned char *main_opcodes = (unsigned char *)main;
+
 	for (i = 0; i < num_bytes; i++)
 	{
 		printf("%02x", main_opcodes[i]);

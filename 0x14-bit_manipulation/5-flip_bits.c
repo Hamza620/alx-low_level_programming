@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	exores = n ^ m;
 	while (exores)
 	{
-		t = t + exores & 1UL;
+		t = t + exores & 1;
 		exores >>= 1;
 	}
 	return (t);

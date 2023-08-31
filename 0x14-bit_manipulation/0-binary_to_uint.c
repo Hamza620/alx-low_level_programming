@@ -20,6 +20,6 @@ unsigned int binary_to_uint(const char *b)
 		out = out * 2;
 		out += (b[i] - '0');
 	}
-	return (out)et number
+	return (out);
 
 }

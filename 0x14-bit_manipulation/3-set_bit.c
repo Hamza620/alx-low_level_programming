@@ -13,6 +13,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	if (index >= size)
 		return (-1);
-	op = !!(*n |= 1L <<  index);
+	op = !!(*n |= 1UL <<  index);
 	return (op);
 }

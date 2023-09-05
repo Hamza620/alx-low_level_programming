@@ -14,10 +14,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t rd_bytes;
 	ssize_t wr_bytes;
 
-	if (file_disc == -1 || filename == NULL)
+	if (file_disc == -1 || filename == NULL || letters == 0)
 		return (0);
-	if (letters == 0)
-		letters = sizeof(txt);
 	rd_bytes = read(file_disc, &txt[0], letters);
 	wr_bytes = write(STDOUT_FILENO, &txt[0], rd_bytes);
 	close(file_disc);

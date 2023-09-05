@@ -15,8 +15,6 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	if (strlen(text_content))
 		wr_res = write(file_disc, text_content, strlen(text_content));
-	if (wr_res == -1)
-		return (-1);
 	close(file_disc);
 	if (wr_res == (ssize_t)strlen(text_content))
 		return (1);

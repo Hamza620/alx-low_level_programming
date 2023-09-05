@@ -6,7 +6,7 @@
  * @text_content: text to write
  * Return: 1 on success and -1 on failure
  */
-int append_text_to_file(const char *filename, char *text_content)
+int create_file(const char *filename, char *text_content)
 {
 	int file_disc = open(filename, O_WRONLY || O_CREAT || O_TRUNC, 0600);
 	ssize_t wr_res = 0;

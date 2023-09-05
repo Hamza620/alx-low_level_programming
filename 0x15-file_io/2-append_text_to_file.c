@@ -8,12 +8,12 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file_disc = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	int file_disc = open(filename, O_WRONLY || O_APPEND);
 	ssize_t wr_res = 0;
 
 	if (filename == NULL || file_disc == -1)
 		return (-1);
-	if (strlen(text_content) > 0 && text_content != NULL)
+	if (strlen(text_content))
 		wr_res = write(file_disc, text_content, strlen(text_content));
 	close(file_disc);
 	if (wr_res == (ssize_t)strlen(text_content))

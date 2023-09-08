@@ -8,7 +8,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file_disc = open(filename, O_WRONLY || O_CREAT || O_TRUNC, 0600);
+	int file_disc = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	ssize_t wr_res = 0;
 
 	if (filename == NULL || file_disc == -1)

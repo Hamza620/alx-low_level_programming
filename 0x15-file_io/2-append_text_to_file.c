@@ -8,7 +8,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file_disc = open(filename, O_WRONLY || O_APPEND);
+	int file_disc = open(filename, O_WRONLY | O_APPEND);
 	ssize_t wr_res = 0;
 
 	if (filename == NULL || file_disc == -1)
